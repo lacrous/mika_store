@@ -35,6 +35,14 @@ export function Navbar() {
           height: isScrolled ? 56 : 64,
         }}
       >
+        {/* Bottom gold border */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, transparent, var(--nv-gold-dim), var(--nv-gold-bright), var(--nv-gold-dim), transparent)",
+          }}
+        />
 
         <Link
           to="/"
