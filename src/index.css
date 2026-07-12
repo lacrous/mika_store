@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+/* ── MIKA STORE DESIGN SYSTEM ──
+   A dark, premium e-commerce skin adapted from the MIKA anime app.
+   Uses Tailwind CSS v4 @theme + custom CSS variables. */
+
+:root {
+  /* ── Dark Theme (Default) ── */
+  --nv-bg-body: #050505;
+  --nv-bg-elevated: #0e0e0e;
+  --nv-bg-surface: #141414;
+  --nv-bg-overlay: rgba(0, 0, 0, 0.75);
+  --nv-bg-card: rgba(255, 255, 255, 0.03);
+  --nv-bg-card-hover: rgba(255, 255, 255, 0.06);
+  --nv-bg-input: rgba(255, 255, 255, 0.04);
+  --nv-bg-glass: rgba(255, 255, 255, 0.03);
+
+  --nv-border: rgba(255, 255, 255, 0.06);
+  --nv-border-hover: rgba(255, 255, 255, 0.12);
+  --nv-border-gold: rgba(212, 175, 55, 0.3);
+
+  --nv-text-primary: #f5f5f5;
+  --nv-text-secondary: #b0b0b0;
+  --nv-text-tertiary: #737373;
+  --nv-text-muted: #4a4a4a;
+  --nv-text-dim: #3a3a3a;
+
+  --nv-gold-dim: #b8962e;
+  --nv-gold: #d4af37;
+  --nv-gold-bright: #f0d878;
+  --nv-gold-glow: rgba(212, 175, 55, 0.15);
+
+  --nv-success: #4ade80;
+  --nv-error: #f87171;
+  --nv-info: #60a5fa;
+
+  --nv-scrollbar-track: #050505;
+  --nv-scrollbar-thumb: #222222;
+
+  --nv-glass-bg: rgba(255, 255, 255, 0.03);
+  --nv-glass-border: rgba(255, 255, 255, 0.06);
+  --nv-glass-highlight: rgba(255, 255, 255, 0.08);
+
+  /* ── shadcn compat ── */
+  --background: 0 0% 2%;
+  --foreground: 0 0% 96%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 96%;
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 43 72% 52%;
+  --primary-foreground: 0 0% 2%;
+  --secondary: 0 0% 8%;
+  --secondary-foreground: 0 0% 96%;
+  --muted: 0 0% 8%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 43 72% 52%;
+  --accent-foreground: 0 0% 2%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 96%;
+  --border: 0 0% 12%;
+  --input: 0 0% 12%;
+  --ring: 43 72% 52%;
+  --radius: 0.625rem;
+}
+
+html.light {
+  --nv-bg-body: #f0eee8;
+  --nv-bg-elevated: #faf9f6;
+  --nv-bg-surface: #eae7e0;
+  --nv-bg-overlay: rgba(0, 0, 0, 0.5);
+  --nv-bg-card: rgba(0, 0, 0, 0.03);
+  --nv-bg-card-hover: rgba(0, 0, 0, 0.06);
+  --nv-bg-input: rgba(0, 0, 0, 0.04);
+  --nv-bg-glass: rgba(255, 255, 255, 0.75);
+
+  --nv-border: rgba(0, 0, 0, 0.07);
+  --nv-border-hover: rgba(0, 0, 0, 0.14);
+  --nv-border-gold: rgba(180, 145, 30, 0.4);
+
+  --nv-text-primary: #1c1917;
+  --nv-text-secondary: #44403c;
+  --nv-text-tertiary: #78716c;
+  --nv-text-muted: #a8a29e;
+  --nv-text-dim: #c4bfbb;
+
+  --nv-gold-dim: #b8962e;
+  --nv-gold: #c4a02e;
+  --nv-gold-bright: #d4b03a;
+  --nv-gold-glow: rgba(196, 160, 46, 0.12);
+
+  --nv-scrollbar-track: #f0eee8;
+  --nv-scrollbar-thumb: #d6d3cd;
+
+  --nv-glass-bg: rgba(255, 255, 255, 0.75);
+  --nv-glass-border: rgba(0, 0, 0, 0.07);
+  --nv-glass-highlight: rgba(255, 255, 255, 0.9);
+
+  --background: 40 14% 94%;
+  --foreground: 20 14% 10%;
+  --card: 40 20% 98%;
+  --card-foreground: 20 14% 10%;
+  --popover: 40 20% 98%;
+  --popover-foreground: 20 14% 10%;
+  --secondary: 40 12% 92%;
+  --secondary-foreground: 20 14% 10%;
+  --muted: 40 12% 92%;
+  --muted-foreground: 20 6% 42%;
+  --border: 40 10% 82%;
+  --input: 40 10% 82%;
+}
+
+@theme inline {
+  /* Map CSS variables to Tailwind theme keys */
+  --color-nv-bg-body: var(--nv-bg-body);
+  --color-nv-bg-elevated: var(--nv-bg-elevated);
+  --color-nv-bg-surface: var(--nv-bg-surface);
+  --color-nv-bg-card: var(--nv-bg-card);
+  --color-nv-bg-card-hover: var(--nv-bg-card-hover);
+  --color-nv-bg-input: var(--nv-bg-input);
+
+  --color-nv-border: var(--nv-border);
+  --color-nv-border-hover: var(--nv-border-hover);
+  --color-nv-border-gold: var(--nv-border-gold);
+
+  --color-nv-text-primary: var(--nv-text-primary);
+  --color-nv-text-secondary: var(--nv-text-secondary);
+  --color-nv-text-tertiary: var(--nv-text-tertiary);
+  --color-nv-text-muted: var(--nv-text-muted);
+
+  --color-nv-gold: var(--nv-gold);
+  --color-nv-gold-dim: var(--nv-gold-dim);
+  --color-nv-gold-bright: var(--nv-gold-bright);
+  --color-nv-gold-glow: var(--nv-gold-glow);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: "Geist Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--nv-bg-body);
+    color: var(--nv-text-primary);
+    font-family: "Geist Sans", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--nv-scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--nv-scrollbar-thumb);
+    border-radius: 9999px;
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #fff;
+  }
+  html.light ::selection {
+    background: rgba(212, 175, 55, 0.25);
+    color: #1c1917;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--nv-gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .nv-card-bg {
+    background: var(--nv-bg-card);
+    border: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .nv-card-bg:hover {
+    background: var(--nv-bg-card-hover);
+  }
+
+  .nv-glass {
+    background: var(--nv-glass-bg);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border: 1px solid var(--nv-glass-border);
+  }
+
+  .nv-glass-elevated {
+    background: var(--nv-glass-bg);
+    backdrop-filter: blur(30px) saturate(1.4);
+    -webkit-backdrop-filter: blur(30px) saturate(1.4);
+    border: 1px solid var(--nv-glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--nv-glass-highlight);
+  }
+
+  .nv-gold-glow {
+    box-shadow: 0 0 20px var(--nv-gold-glow), 0 0 40px rgba(212, 175, 55, 0.08);
+  }
+
+  .nv-card-overlay-gradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 70%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+@keyframes goldPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(12px);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
