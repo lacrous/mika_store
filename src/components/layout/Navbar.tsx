@@ -28,21 +28,13 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[200] flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? "bg-[rgba(14,14,14,0.75)] backdrop-blur-xl" : "bg-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between bg-transparent transition-all duration-300"
         style={{
           paddingLeft: "clamp(5vw, 8vw, 10vw)",
           paddingRight: "clamp(5vw, 8vw, 10vw)",
           height: isScrolled ? 56 : 64,
         }}
       >
-        {isScrolled && (
-          <div
-            className="absolute inset-x-[clamp(3vw,6vw,8vw)] top-2 bottom-2 rounded-full nv-glass-elevated transition-all duration-300"
-            style={{ border: "1px solid var(--nv-border)" }}
-          />
-        )}
 
         <Link
           to="/"
