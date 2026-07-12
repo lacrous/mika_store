@@ -30,21 +30,28 @@ export function Navbar() {
       <nav
         className="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between bg-transparent transition-all duration-300"
         style={{
-          paddingLeft: "clamp(5vw, 8vw, 10vw)",
-          paddingRight: "clamp(5vw, 8vw, 10vw)",
-          height: isScrolled ? 56 : 64,
+          paddingInline: "clamp(3vw, 6vw, 8vw)",
+          paddingTop: 12,
+          height: isScrolled ? 68 : 76,
         }}
       >
-        {/* Bottom gold border */}
+        {/* Rounded border frame */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+          className="absolute inset-x-[clamp(3vw,6vw,8vw)] top-3 bottom-3 rounded-full pointer-events-none transition-all duration-300"
           style={{
-            background:
-              "linear-gradient(to right, transparent, var(--nv-gold-dim), var(--nv-gold-bright), var(--nv-gold-dim), transparent)",
+            border: "1px solid var(--nv-border)",
+            background: "transparent",
           }}
         />
 
-        <Link
+        <div
+          className="relative z-10 flex w-full items-center justify-between"
+          style={{
+            paddingLeft: "clamp(2vw, 4vw, 6vw)",
+            paddingRight: "clamp(2vw, 4vw, 6vw)",
+          }}
+        >
+          <Link
           to="/"
           className="relative z-10 text-[var(--nv-gold)] text-[18px] font-bold tracking-[0.15em] select-none flex-shrink-0 group"
         >
@@ -143,6 +150,7 @@ export function Navbar() {
           >
             <Menu className="h-4 w-4" />
           </button>
+        </div>
         </div>
       </nav>
 
