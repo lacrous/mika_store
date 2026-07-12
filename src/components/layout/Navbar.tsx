@@ -45,23 +45,23 @@ export function Navbar() {
         />
 
         <div
-          className="relative z-10 flex w-full items-center justify-between"
+          className="relative z-10 grid w-full grid-cols-[1fr_auto_1fr] items-center"
           style={{
             paddingLeft: "clamp(2vw, 4vw, 6vw)",
             paddingRight: "clamp(2vw, 4vw, 6vw)",
           }}
         >
           <Link
-          to="/"
-          className="relative z-10 text-[var(--nv-gold)] text-[18px] font-bold tracking-[0.15em] select-none flex-shrink-0 group"
-        >
+            to="/"
+            className="relative z-10 justify-self-start text-[var(--nv-gold)] text-[18px] font-bold tracking-[0.15em] select-none flex-shrink-0 group"
+          >
           <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]">
             MIKA
           </span>
           <span className="absolute inset-0 blur-lg bg-[var(--nv-gold)] rounded-lg opacity-20" />
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6 relative z-10">
+        <div className="hidden lg:flex items-center justify-center gap-6 relative z-10">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -94,7 +94,7 @@ export function Navbar() {
           })}
         </div>
 
-        <div className="flex items-center gap-2.5 relative z-10">
+        <div className="flex items-center justify-end gap-2.5 relative z-10">
           <div className="relative hidden md:flex items-center gap-2.5">
             <AnimatePresence>
               {searchOpen && (
